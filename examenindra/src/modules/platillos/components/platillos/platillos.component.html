@@ -1,0 +1,15 @@
+<a routerLink="../../welcome/welcome" class="nav-link">Home</a> - <a routerLink="../../ingredientes/ingredientespopulares" class="nav-link">Ingredientes</a> - Perfil del Usuario - Cerrar Sesións
+
+<h1>Platillos populares</h1>
+<ul>
+    <li *ngFor="let item of Platillos| paginate:page_size:page_number"> 
+        {{ item.strMeal }}
+    </li>
+    <mat-paginator [length]="Platillos.length"
+                                [pageSize]="page_size"
+                                [pageSizeOptions]="pageSizeOptions"
+                                (page)="handelPage($event)"
+                                showFirstLastButtons>
+                        </mat-paginator>
+
+</ul>
